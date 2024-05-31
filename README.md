@@ -76,6 +76,9 @@ The dashboard displays a welcome message to logged-in users.
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
    }
    ?>
+6. **Starting MAMP OR XAMPP**
+   ```sh
+     Open MAMP or XAMPP and start the Apache and MySQL servers.
 
 7. **Starting MAMP OR XAMPP**
    ```sh
