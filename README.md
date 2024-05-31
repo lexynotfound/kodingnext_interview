@@ -35,3 +35,51 @@ The dashboard displays a welcome message to logged-in users.
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/lexynotfound/kodingnext_interview.git
+
+2. **Change the directory repository:**
+   ```sh
+   cd kodingnext_interview
+
+3. **Set up MAMP or XAMMPP:**
+   ```sh
+   Ensure MAMP or XAMPP is installed and running on your machine.
+   Move the project files to the MAMP htdocs directory.
+
+4. **Create Database :**
+   ```sh
+   CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+   );
+
+5. **Update the database configuration: :**
+   ```sh
+   <?php
+      $host = 'localhost';
+      $port = '8889'; // Adjust if necessary
+      $db = 'kodingnext';
+      $user = 'root';
+      $pass = 'root'; // Default MAMP password
+      $charset = 'utf8mb4';
+
+      $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
+      $options = [
+          PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+          PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+          PDO::ATTR_EMULATE_PREPARES   => false,
+      ];
+
+   try {
+       $pdo = new PDO($dsn, $user, $pass, $options);
+   } catch (\PDOException $e) {
+    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+   }
+   ?>
+
+7. **Starting MAMP OR XAMPP**
+   ```sh
+     Open a web browser and navigate to `http://localhost/kodingnext:
+
+
+    
